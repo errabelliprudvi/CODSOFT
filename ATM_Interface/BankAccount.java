@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 
 public class BankAccount {
     private double balance;
@@ -13,20 +15,20 @@ public class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("Deposit successful! New balance: $" + balance);
+            JOptionPane.showMessageDialog(null, "Deposit successful! New balance: $" + balance);
         } else {
-            System.out.println("Invalid deposit amount. Please enter a positive value.");
+            JOptionPane.showMessageDialog(null, "Invalid deposit amount! Enter a positive value.");
         }
     }
 
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("Withdrawal successful! New balance: $" + balance);
+            JOptionPane.showMessageDialog(null, "Withdrawal successful! New balance: $" + balance);
         } else if (amount > balance) {
-            System.out.println("Insufficient balance! Your current balance is $" + balance);
+            JOptionPane.showMessageDialog(null, "Insufficient balance! Your current balance is $" + balance);
         } else {
-            System.out.println("Invalid withdrawal amount. Please enter a positive value.");
+            JOptionPane.showMessageDialog(null, "Invalid withdrawal amount! Enter a positive value.");
         }
     }
 }
